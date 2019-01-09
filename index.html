@@ -5,12 +5,40 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width-device-width, initial-scale=1.0">
     <title>Zadanie 14</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="vendor/normalize.css">
     <link rel="stylesheet" href="vendor/flickity/flickity.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body>
+    <div class="main-carousel">
+        <div class="carousel-cell" id="carousel-cell1" style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg)">
+            <div class="container"><a href="#carousel-cell1">Cell 1</a></div>
+            <button class="reset">Reset</button>
+        </div>
+        <div class="carousel-cell" id="carousel-cell2" style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg)">
+            <div class="container"><a href="#carousel-cell2">Cell 2</a></div>
+            <button class="reset">Reset</button>
+        </div>
+        <div class="carousel-cell" id="carousel-cell3" style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg)">
+            <div class="container"><a href="#carousel-cell3">Cell 3</a></div>
+            <button class="reset">Reset</button>
+        </div>
+        <div class="carousel-cell" id="carousel-cell4" style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg)">
+            <div class="container"><a href="#carousel-cell4">Cell 4</a></div>
+            <button class="reset">Reset</button>
+        </div>
+        <div class="carousel-cell" id="carousel-cell5" style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/golden-hour.jpg)">
+            <div class="container"><a href="#carousel-cell5">Cell 5</a></div>
+            <button class="reset">Reset</button>
+        </div>
+    </div>
+    <div class="progress-bar"></div>
+
+
     <script src="vendor/flickity/flickity.pkgd.min.js"></script>
+    <script src="vendor/flickity/hash.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

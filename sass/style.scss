@@ -1,6 +1,38 @@
-@import "normalize";
 * {box-sizing: border-box;}
 @import "variables";
 @import "layout";
 @import "mixins"; 
 
+.carousel-cell {
+    width: 100%; /* full width */
+    height: 50vh; /* height of carousel */
+    min-height: 250px;
+    margin-right: 10px;
+    background-size: cover;
+
+    & .container {
+        max-width: 800px;
+        width: 50%;
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+
+.main-carousel {
+    position: relative;
+}
+
+.reset {
+    position: absolute;
+    left: 100px;
+    top: 10px;
+    height: 50px;
+    width: 100px;
+}
+
+
+.progress-bar {
+    height: 20px;
+    width: 0;
+    background: #333;
+  }
