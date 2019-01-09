@@ -1,39 +1,11 @@
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-.carousel-cell {
-  width: 100%;
-  /* full width */
-  height: 50vh;
-  /* height of carousel */
-  min-height: 250px;
-  margin-right: 10px;
-  background-size: cover;
-}
+.carousel-cell { width: 100%; /* full width */ height: 50vh; /* height of carousel */ min-height: 250px; margin-right: 10px; background-size: cover; }
 
-.carousel-cell .container {
-  max-width: 800px;
-  width: 50%;
-  margin: 0 auto;
-  text-align: center;
-}
+.carousel-cell .container { max-width: 800px; width: 50%; margin: 0 auto; text-align: center; }
 
-.main-carousel {
-  position: relative;
-}
+.main-carousel { position: relative; }
 
-.reset {
-  position: absolute;
-  left: 5%;
-  top: 5%;
-  height: 50px;
-  width: 50px;
-}
+.reset { position: absolute; left: 5%; top: 5%; height: 50px; width: 50px; }
 
-.progress-bar {
-  height: 20px;
-  width: 0;
-  background: #333;
-}
-/*# sourceMappingURL=style.css.map */
+.progress-bar { height: 20px; width: 0; background: #333; }
