@@ -6,7 +6,7 @@ for (let i = 0; i < productsData.length; i++) {
     listItems += Mustache.render(templateItem, productsData[i]);
 }
 
-var fullCarousel = Mustache.render(templateCarousel, {carousel: listItems});
+const fullCarousel = Mustache.render(templateCarousel, {carousel: listItems});
 	
 results.insertAdjacentHTML('beforeend', fullCarousel);
 
