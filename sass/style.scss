@@ -5,7 +5,7 @@
 
 .carousel-cell {
     width: 100%; /* full width */
-    height: 50vh; /* height of carousel */
+    height: 45vh; /* height of carousel */
     min-height: 250px;
     margin-right: 10px;
     background-size: cover;
@@ -35,4 +35,10 @@
     height: 20px;
     width: 0;
     background: #333;
+  }
+
+  .maps {
+    width: 100%; /* full width */
+    height: 45vh; /* height of carousel */
+    min-height: 250px;
   }

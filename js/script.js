@@ -1,5 +1,7 @@
 
-document.addEventListener("DOMContentLoaded", function(event) {
+let flkty;
+
+document.addEventListener("DOMContentLoaded", function (event) {
     const templateCarousel = document.getElementById('template-carousel').innerHTML;
     const templateItem = document.getElementById('template-carousel-item').innerHTML;
     Mustache.parse(templateItem);
@@ -8,13 +10,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
         listItems += Mustache.render(templateItem, productsData[i]);
     }
 
-    const fullCarousel = Mustache.render(templateCarousel, {carousel: listItems});
-        
+    const fullCarousel = Mustache.render(templateCarousel, { carousel: listItems });
+
     results.insertAdjacentHTML('beforeend', fullCarousel);
 
 
     const carousel = document.querySelector('.main-carousel');
-    const flkty = new Flickity(carousel, {
+    flkty = new Flickity(carousel, {
         imagesLoaded: true,
         percentPosition: false,
         fullscreen: true,
@@ -38,3 +40,21 @@ document.addEventListener("DOMContentLoaded", function(event) {
         });
     });
 });
+
+function initMap() {
+    let uluru = [];
+    let marker = [];
+    for (let i = 0; i < productsData.length; i++) {
+        uluru.push(productsData[i].coords);
+    };
+    var map = new google.maps.Map(
+        document.getElementById('map'), { zoom: 4, center: uluru[0] });
+
+    for (let i = 0; i < productsData.length; i++) {
+        marker[i] = new google.maps.Marker({ position: uluru[i], map: map });
+        marker[i].addListener('click', function () {
+            flkty.select(i);
+        });
+    }
+}
+

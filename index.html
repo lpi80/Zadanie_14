@@ -13,6 +13,7 @@
 <body>
     <div id="results"></div>
     <div class="progress-bar"></div>
+    <div class="maps" id="map"></div>
 
 
     <script id="template-carousel" type="x-tmpl-mustache">
@@ -34,34 +35,39 @@
     <script>
         var productsData = [
             {
-                image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg',
+                image: 'images/LondonMarathon.jpg',
                 title: 'Slajd 1',
                 description: '"<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>"',
-                id: "carousel-cell1"
+                id: "carousel-cell1",
+                coords: {lat: 51.473209, lng: 0.012061}  //london marathon 51.473209, 0.012061
             },
             {
-                image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg',
+                image: 'images/NYmarathon.jpg',
                 title: 'Slajd 2',
                 description: '"<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>"',
-                id: "carousel-cell2"
+                id: "carousel-cell2",
+                coords: {lat: 42.444846, lng: -76.033504}  //new york marathon 42.444846, -76.033504
             },
             {
-                image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg',
+                image: 'images/BerlinMarathon.jpg',  
                 title: 'Slajd 3',
                 description: '"<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>"',
-                id: "carousel-cell3"
+                id: "carousel-cell3",
+                coords: {lat: 52.520335, lng: 13.242220}  //berlin marathon 52.520335, 13.242220
             },
             {
-                image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg',
+                image: 'images/TokyoMarathon.jpg',
                 title: 'Slajd 4',
                 description: '"<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>"',
-                id: "carousel-cell4"
+                id: "carousel-cell4",
+                coords: {lat: 35.683249, lng: 139.691521} //tokio marathon 35.683249, 139.691521
             },
             {
-                image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/golden-hour.jpg',
+                image: 'images/BostonMarathon.jpg',
                 title: 'Slajd 5',
                 description: '"<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>"',
-                id: "carousel-cell5"
+                id: "carousel-cell5",
+                coords: {lat: 42.229792, lng: -71.518201} //boston marathon 42.229792, -71.518201
             }
         ];
     </script>
@@ -69,6 +75,7 @@
     <script src="vendor/mustache.js"></script>
     <script src="vendor/flickity/flickity.pkgd.min.js"></script>
     <script src="vendor/flickity/hash.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcEUGGWhCpS5poertcAcBrIV_W64i3Sfo&callback=initMap"></script>
     <script src="js/script.js"></script>
 </body>
 
