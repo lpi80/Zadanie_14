@@ -29,25 +29,40 @@ flkty.on('scroll', function (progress) {
     progressBar.style.width = progress * 100 + '%';
 });
 
+flkty.on('change', function (position) {
+    if (!maps.blockade) {
+        maps.map.panTo(maps.uluru[position]);
+        maps.map.setZoom(10);
+    } 
+    maps.blockade = false;
+});
+
 document.querySelectorAll('.reset').forEach(function (kind) {
     kind.addEventListener('click', function (event) {
         flkty.select(0);
     });
 });
 
+let maps = {
+    uluru: [],
+    marker: [],
+    map,
+    blockade: false
+}
+
 function initMap() {
-    let uluru = [];
-    let marker = [];
     for (let i = 0; i < productsData.length; i++) {
-        uluru.push(productsData[i].coords);
+        maps.uluru.push(productsData[i].coords);
     };
-    const map = new google.maps.Map(
-        document.getElementById('map'), { zoom: 4, center: uluru[0] });
+    maps.map = new google.maps.Map(
+        document.getElementById('map'), { zoom: 4, center: maps.uluru[0] });
 
     for (let i = 0; i < productsData.length; i++) {
-        marker[i] = new google.maps.Marker({ position: uluru[i], map: map });
-        marker[i].addListener('click', function () {
+        maps.marker[i] = new google.maps.Marker({ position: maps.uluru[i], map: maps.map });
+        maps.marker[i].addListener('click', function () {
+            maps.blockade = true;
             flkty.select(i);
+
         });
     }
 }
